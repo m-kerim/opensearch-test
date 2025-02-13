@@ -94,6 +94,16 @@ public class FakeIngestionSource {
         }
 
         @Override
+        public IngestionShardPointer pointerFromTimestampMillis(long timestampMillis) {
+            throw new UnsupportedOperationException("Not implemented yet.");
+        }
+
+        @Override
+        public IngestionShardPointer pointerFromOffset(long offset) {
+            return new FakeIngestionShardPointer(offset);
+        }
+
+        @Override
         public int getShardId() {
             return shardId;
         }
